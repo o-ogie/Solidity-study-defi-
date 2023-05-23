@@ -201,3 +201,40 @@ gas : 총 주유량 17.4825 (30000/1716) 21000이 디폴트 값으고, 이후로
 1byte당 5가스정도.
 트랜잭션을 3byte만큼 발생한다면 21015가스가 발생한다. 여기에 gasPrice를 곱한 값이 총 수수료
  
+byteCode생성 노드로 요청 트랙잭션 발생 트랜잭션 풀(가스비용이 높을수록 우선순위)에서 블록생성시 gas계산검증과 byte코드 검사/검증 및 실행
+
+ ## EVM
+ Ethereum Vitual Machine
+ 노드들이 EVM을 다 가지고 있고 EVM을 활용하여 처리한다.
+
+
+
+1. Solidity 생성, 컴파일
+2. Transaction 생성 / 서명 ( 수수료 발생 )
+3. Gas 소비
+4. 코드 실행
+5. 상태 변경
+6. 트랜잭션 완성(CA계정 생성)
+
+
+Solidity 생성, 컴파일
+- Smart Contract를 실행하기 전에 Contract Compile하여 EVM이 이해할 수 있도록 변환함.
+
+Transaction 생성/ 서명 ( 수수료 발생 )
+- EVM이 이해할 수 있는 Compile 된 내용을 Transaction.data 부분에 넣고 Transaction생성
+
+Gas소비
+- Miner에 의해 EVM을 통해 ByteCode가 해석되고, 이때 Gas량이 측정됨
+
+코드 실행
+- Contract 인스턴스생성 ( 한번 배포하면 1개의 인스터만 존재 )
+만약 실수를 한다면 재 배포해야함. 수수료도 다시 지급. -> 수정이 가능한 상황이 잇으면 안되기 때문
+
+상태변경
+- Contract 기본상태 설정 및 변경
+`value`값
+
+트랜잭션 완성
+
+
+ 
