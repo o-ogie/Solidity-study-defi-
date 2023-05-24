@@ -85,6 +85,7 @@
 import {useEffect, useState} from "react"
 import Web3 from "web3"
 import useWeb3 from "./hooks/web3.hook"
+
 /**
  * Typescript에서
  * window객체는 any 타입을 사용하자... 가변적으로 늘어나는 객체임.
@@ -101,13 +102,53 @@ import useWeb3 from "./hooks/web3.hook"
  */
 
 const App = () => {
-  const {account} = useWeb3() // useWeb3내부의 상태가 변경되면서 한번 더 실행된다.
+  const [count, setCount] = useState(0)
+  const {user, web3} = useWeb3() // useWeb3내부의 상태가 변경되면서 한번 더 실행된다.
   console.log(account)
 
   if(account === null) return "값이 존재하지 않습니다."
 
-  
-  return (
+  const handleClick = async(e)=>{
+    e.preventDefault()
+    const to = e.targer.received.value
+    const value = web3.utils.toWei(e.target.amount.value)
+    const tx = {
+      form: account,
+      to,
+      value
+    }
+    web3.ethe.sendTransaction(tx).then(console.log)
+  }
+
+
+    const increment = async() => {
+      const incrementData = abi.find((data)=>data.name ==="increment")
+      const data = web3.eth.abi.encodeFunectionCall(incrementdata, [])
+
+        const from = user.account
+        const to = ""
+        const tx = {
+          from,
+          to,
+          data,
+        }
+        const result = await web3.the.sendTransaction(tx)
+        setCount(web3.utils.toBN(result).toString(10))
+    }
+    const decrement = () => {}
+
+    useEffect(()=>{
+      console.log('Effect')
+
+      if(web3 === null) return
+      //call
+      web3.eth.call({
+        // storage
+      })
+    },[])
+
+
+    return (
     <>
       <form>
         <input type="text" id="received" placeholder="받을 계정" />
@@ -115,8 +156,14 @@ const App = () => {
         <button type="submit">전송</button>
       </form>
 
+      <form>
+        <h2>카운터</h2>
+        <button onClick={increment}>증가</button>
+        <button onClick={decrement}>감소</button>
+      </form>
+
     </>  
-  );
+  )
 }
 
-export default App;
+export default App

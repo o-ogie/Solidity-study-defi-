@@ -1,12 +1,33 @@
 import { useEffect, useState } from "react";
-
+import Web3 from "web3"
 // 궁극적 목적은 데이터를 반환한다.
 // 데이터를 만들때 hook함수를 활용한다.
 const useWeb3 = () => {
-    const [account, setAccount] = useState(null)
+    const [user, setUser] = useState({
+        account:"",
+        balance:"",
+    })
+
+    const [web3, setWeb3] = useState(null)
 
     useEffect(()=>{
-        setAccount("hello")
+        if(window.ethereum){
+            winwdow.ethereum.request({
+                method:"eth_requestAccounts"
+            }).then(data=>{
+                const web3Provider = new Web3(window.ethereum)
+                setWeb3(web3Provider)
+                setUser({
+                    ...user,
+                    account:data,
+                    balance: await web3Provider.utils.toWei(await web3Provider.eth.getBalance(data))
+            })
+            }).catch((error)=>{
+                console.log(error.message)
+            })
+        }else{
+            alert("메타마스크 설치 ㄱ")
+        }
     },[])
 
     return{
