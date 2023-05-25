@@ -1,0 +1,21 @@
+{
+  "name": "230525",
+  "version": "1.0.0",
+  "description": "MainNet과 ChainId만 다를뿐 로직이나 동작은 같게 돌아간다.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.11",
+    "dot-env": "^0.0.1",
+    "dotenv": "^16.0.3",
+    "web3": "^1.10.0"
+  }
+}
