@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import AppleShop from "./pages/appleShop";
+import useWeb3 from "./hooks/useWeb3";
 
-function App() {
+const App = () => {
+  const [account,web3] = useWeb3()
+
+  if(!account || !web3) return <>
+    메타마스크 연결 후 이용이 가능합니다.
+  </>
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <h2>사과 가게</h2>
+      <AppleShop web3={web3} account={account}/>
+    </>
+  )
 }
 
 export default App;
