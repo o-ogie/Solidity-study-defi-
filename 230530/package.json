@@ -1,0 +1,16 @@
+{
+  "name": "230530",
+  "version": "1.0.0",
+  "description": "# payalbe account의 4가지 속성을 다사용하는 계정 CA balance에 값을 넣으려다가 실패하는 이유 payalbe이 되어잇는 계정에 가능하기 때문?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.11",
+    "dotenv": "^16.0.3"
+  }
+}

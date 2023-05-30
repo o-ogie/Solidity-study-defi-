@@ -3,7 +3,6 @@ npm init -y
 npx truffle init
 npm install dotenv @truffle/hdwallet-provider
 npx ganache-cli
-
 ```
 
 
@@ -67,6 +66,31 @@ web3.eth.getTransaction("txhash")
 
 SimpleStore.deployed().then(data=>instance=data)
 instance.methods
+
+## mapping
+
+배열 or 객체
+```js
+const a = ['web7722','asdfasdf']
+            a[1]        a[2]
+
+const b = {name:'ingoo',id:"web7722"}
+```
+
+```solidity
+mapping(number=>string) public a;
+
+a[0] = web7722;
+a[1] = asdfasdf;
+
+mapping(string=>string) public b;
+b
+
+mapping(address>uing256) public c;
+
+
+```
+mapping을 사용하는 이유는 군집형 데이터를 사용하고 싶어서이다.
 
 # EIP Ethereum Improvement Proposals
 
