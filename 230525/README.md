@@ -23,7 +23,6 @@ url을 알아야하는데 알려진게 없다.
  - Alchemy
 
 
-API https://goerli.infura.io/v3/8b31cfb2f2b3472081dd6243295b44ea
 
 npx truffle init
 npx truffle migrate --network georli
