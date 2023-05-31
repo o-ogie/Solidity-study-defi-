@@ -15,7 +15,7 @@ contract lec4 {
     }
 
     // 3. Parameter는 없고 return이 있는 경우
-    function changeA3() public returns(uint256) {
+    function changeA3() public view returns(uint256) {
         return a;
     }
  
