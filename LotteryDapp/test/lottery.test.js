@@ -19,4 +19,10 @@ contract("Lottery", ([deployer, user1, user2])=>{ // ganache의 계정 10개가 
 
     })
 
+    it("getPot should return current pot", async () => {
+        let pot = await lottery.getPot();
+        assert.equal(pot, 0);
+
+    })
+
 })
