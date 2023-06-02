@@ -8,6 +8,10 @@ contract IngToken is ERC20 {
     constructor() ERC20("ingToken","ITK") {
         _mint(msg.sender, 1000 * (10 ** 18));
     }
+
+    // function approve2() public view returns(){
+
+    // }
 }
 
 // 스왑 컨트랙트
