@@ -1,0 +1,97 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "str",
+						"type": "string"
+					}
+				],
+				"name": "numberTracker",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "str",
+						"type": "string"
+					}
+				],
+				"name": "numberTracker2",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_str",
+						"type": "string"
+					}
+				],
+				"name": "PushEvent",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lec14.sol": "lec14"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"lec14.sol": {
+			"keccak256": "0x457d5b35216acac11e85173106a0d7b9ce8a20652d2a1a341de796c1e3bdaac6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5f54ac0391a763062832e85870742103fd11453c2b8beafd69127895943ffcf0",
+				"dweb:/ipfs/QmSb8nCFeG33rPe861MjBHu1z38FA4wK81nfGm7AnMgtfa"
+			]
+		}
+	},
+	"version": 1
+}
